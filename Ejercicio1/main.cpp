@@ -94,11 +94,3 @@ void SortedInsert(List<T>* list, T value)
 	if (value > list->GetValueAt(list->GetCount() - 1))
 		list->PushBack(value);
 }
-//template<typename T, class Type>
-//concept Collection = derived_from<Type, Container<T>>;
-//
-//template<typename T, >
-//void Generator(int quantity)
-//{
-//
-//}
