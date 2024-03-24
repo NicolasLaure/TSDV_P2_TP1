@@ -27,6 +27,9 @@
     <ClInclude Include="Stack.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Generator.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="List.tpp">
@@ -39,6 +42,9 @@
       <Filter>Archivos de origen</Filter>
     </None>
     <None Include="Stack.tpp">
+      <Filter>Archivos de origen</Filter>
+    </None>
+    <None Include="Generator.tpp">
       <Filter>Archivos de origen</Filter>
     </None>
   </ItemGroup>

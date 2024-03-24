@@ -140,12 +140,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Generator.h" />
     <ClInclude Include="List.h" />
     <ClInclude Include="Node.h" />
     <ClInclude Include="Queue.h" />
     <ClInclude Include="Stack.h" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Generator.tpp" />
     <None Include="List.tpp" />
     <None Include="Node.tpp" />
     <None Include="Queue.tpp" />

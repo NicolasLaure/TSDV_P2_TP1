@@ -1,22 +1,8 @@
 #include <iostream>
-//#include "Container.h"
-#include "List.h"
-#include "Queue.h"
-#include "Stack.h"
+#include <iomanip>
+#include "Generator.h"
+
 using namespace std;
-
-
-template<typename T>
-void Generator(List<T>* list, Queue<T>* queueData, Stack<T>* stackData);
-
-template<typename T>
-void Generator(Queue<T>* queue, int quantity);
-
-template<typename T>
-void Generator(Stack<T>* stack, int quantity);
-
-template<typename T>
-void SortedInsert(List<T>* list, T value);
 
 void main()
 {
@@ -33,64 +19,14 @@ void main()
 	Generator(list, queue, stack);
 
 	cout << "Quantity of numbers: " << list->GetCount() << endl;
+	cout << fixed << setprecision(2);
 	for (int i = 0; i < list->GetCount(); i++)
 	{
-		cout << list->GetValueAt(i) << endl;
-	}
-}
-
-template<typename T>
-void Generator(List<T>* list, Queue<T>* queueData, Stack<T>* stackData)
-{
-	for (int i = 0; i < queueData->GetCount(); i++)
-	{
-		T value = queueData->Dequeue();
-		SortedInsert(list, value);
-	}
-	for (int i = 0; i < stackData->GetCount(); i++)
-	{
-		T value = stackData->Pop();
-		SortedInsert(list, value);
-	}
-}
-
-template<typename T>
-void Generator(Queue<T>* queue, int quantity)
-{
-	for (int i = 0; i < quantity; i++)
-	{
-		float numberToPush = rand() % 100;
-		queue->Enqueue(numberToPush);
-	}
-}
-
-template<typename T>
-void Generator(Stack<T>* stack, int quantity)
-{
-	for (int i = 0; i < quantity; i++)
-	{
-		float numberToPush = rand() % 100;
-		stack->Push(numberToPush);
-	}
-}
-
-template<typename T>
-void SortedInsert(List<T>* list, T value)
-{
-	if (list->GetCount() == 0)
-	{
-		list->PushFront(value);
-		return;
+		cout << static_cast<float>(list->GetValueAt(i)) << endl;
 	}
 
-	for (int i = 0; i < list->GetCount(); i++)
-	{
-		if (value < list->GetValueAt(i))
-		{
-			list->Insert(value, i);
-			break;
-		}
-	}
-	if (value > list->GetValueAt(list->GetCount() - 1))
-		list->PushBack(value);
+	delete queue;
+	delete stack;
+	delete list;
 }
+
