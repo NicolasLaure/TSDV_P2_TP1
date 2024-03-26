@@ -19,17 +19,14 @@ void main()
 			case 'r':
 			case 'R':
 				spawner.Spawn(4);
-				cout << "Rojo";
 				break;
 			case 'g':
 			case 'G':
 				spawner.Spawn(10);
-				cout << "Verde";
 				break;
 			case 'b':
 			case 'B':
 				spawner.Spawn(9);
-				cout << "Azul";
 				break;
 			case 'd':
 			case 'D':
