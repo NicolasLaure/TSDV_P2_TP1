@@ -11,6 +11,7 @@ public:
 	~Character();
 
 	void Draw() override;
+	void UnDraw() override;
 	void SetPosition(int newX, int newY) override;
 	void SetActive(bool state) override;
 	virtual bool IsActive() override;

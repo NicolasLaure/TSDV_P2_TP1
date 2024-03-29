@@ -24,6 +24,16 @@ void Character::Draw()
 	std::cout << "/ \\";
 }
 
+void Character::UnDraw()
+{
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)x,(short)y });
+	std::cout << " ";
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)(x - 1),(short)(y + 1) });
+	std::cout << "   ";
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)(x - 1),(short)(y + 2) });
+	std::cout << "   ";
+}
+
 void Character::SetPosition(int newX, int newY)
 {
 	x = newX;
@@ -34,7 +44,10 @@ void Character::SetActive(bool state)
 {
 	isActive = state;
 	if (!isActive)
+	{
+		UnDraw();
 		return;
+	}
 
 	CONSOLE_SCREEN_BUFFER_INFO csbi;
 	GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi);
