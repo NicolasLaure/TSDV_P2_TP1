@@ -10,6 +10,8 @@ class Spawner
 {
 private:
 	T* spawnableObjects;
+
+	bool IsAnyCharacterActive();
 public:
 	Spawner();
 	~Spawner();

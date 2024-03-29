@@ -7,6 +7,7 @@ using namespace std;
 
 void main()
 {
+	srand(time(nullptr));
 	Spawner<Character, 5> spawner;
 
 	bool isRunning = true;
@@ -30,7 +31,7 @@ void main()
 				break;
 			case 'd':
 			case 'D':
-				cout << "Borrar";
+				spawner.Despawn();
 				break;
 			case 'q':
 			case 'Q':
