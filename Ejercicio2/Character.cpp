@@ -17,20 +17,20 @@ void Character::Draw()
 {
 	SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), color);
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)x,(short)y });
-	std::cout << "O";
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)(x - 1),(short)(y + 1) });
+	std::cout << " O ";
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)(x),(short)(y + 1) });
 	std::cout << "/|\\";
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)(x - 1),(short)(y + 2) });
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)(x),(short)(y + 2) });
 	std::cout << "/ \\";
 }
 
 void Character::UnDraw()
 {
 	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)x,(short)y });
-	std::cout << " ";
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)(x - 1),(short)(y + 1) });
 	std::cout << "   ";
-	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)(x - 1),(short)(y + 2) });
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)(x),(short)(y + 1) });
+	std::cout << "   ";
+	SetConsoleCursorPosition(GetStdHandle(STD_OUTPUT_HANDLE), { (short)(x),(short)(y + 2) });
 	std::cout << "   ";
 }
 

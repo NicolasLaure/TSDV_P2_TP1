@@ -3,13 +3,13 @@
 #include "Spawnable.h"
 
 template<typename T>
-concept CharacterClass = std::derived_from<T, Entity> && std::derived_from<T, Spawnable>;
+concept SpawnableEntity = std::derived_from<T, Entity> && std::derived_from<T, Spawnable>;
 
-template<CharacterClass T, int N>
+template<SpawnableEntity T, int N>
 class Spawner
 {
 private:
-	T* spawnableObjects;
+	T spawnableObjects[N];
 
 	bool IsAnyCharacterActive();
 public:

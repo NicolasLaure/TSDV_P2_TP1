@@ -4,18 +4,17 @@
 #include <Windows.h>
 #include "Spawner.h"
 
-template<CharacterClass T, int N>
+template<SpawnableEntity T, int N>
 Spawner<T, N>::Spawner()
 {
-	spawnableObjects = new T[N];
 }
 
-template<CharacterClass T, int N>
+template<SpawnableEntity T, int N>
 Spawner<T, N>::~Spawner()
 {
 }
 
-template<CharacterClass T, int N>
+template<SpawnableEntity T, int N>
 void Spawner<T, N>::Spawn(int color)
 {
 	for (int i = 0; i < N; i++)
@@ -36,7 +35,7 @@ void Spawner<T, N>::Spawn(int color)
 	spawnableObjects[N - 1].SetActive(true);
 }
 
-template<CharacterClass T, int N>
+template<SpawnableEntity T, int N>
 void Spawner<T, N>::Despawn()
 {
 	if (!IsAnyCharacterActive())
@@ -56,7 +55,7 @@ void Spawner<T, N>::Despawn()
 	}
 }
 
-template<CharacterClass T, int N>
+template<SpawnableEntity T, int N>
 bool Spawner<T, N>::IsAnyCharacterActive()
 {
 	for (int i = 0; i < N; i++)
