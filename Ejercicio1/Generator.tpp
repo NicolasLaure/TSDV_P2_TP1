@@ -1,12 +1,15 @@
+
 template<typename T>
-void Generator(List<T>* list, Queue<T>* queueData, Stack<T>* stackData)
+void Generator<T>::QueueAndStackMerger(List<T>* list, Queue<T>* queueData, Stack<T>* stackData)
 {
-	for (int i = 0; i < queueData->GetCount(); i++)
+	int queueSize = queueData->GetCount();
+	int stackSize = stackData->GetCount();
+	for (int i = 0; i < queueSize; i++)
 	{
 		T value = queueData->Dequeue();
 		SortedInsert(list, value);
 	}
-	for (int i = 0; i < stackData->GetCount(); i++)
+	for (int i = 0; i < stackSize; i++)
 	{
 		T value = stackData->Pop();
 		SortedInsert(list, value);
@@ -14,7 +17,7 @@ void Generator(List<T>* list, Queue<T>* queueData, Stack<T>* stackData)
 }
 
 template<typename T>
-void Generator(Queue<T>* queue, int quantity)
+void Generator<T>::QueueGenerator(Queue<T>* queue, int quantity)
 {
 	for (int i = 0; i < quantity; i++)
 	{
@@ -24,7 +27,7 @@ void Generator(Queue<T>* queue, int quantity)
 }
 
 template<typename T>
-void Generator(Stack<T>* stack, int quantity)
+void Generator<T>::StackGenerator(Stack<T>* stack, int quantity)
 {
 	for (int i = 0; i < quantity; i++)
 	{
@@ -34,7 +37,7 @@ void Generator(Stack<T>* stack, int quantity)
 }
 
 template<typename T>
-void SortedInsert(List<T>* list, T value)
+void Generator<T>::SortedInsert(List<T>* list, T value)
 {
 	if (list->GetCount() == 0)
 	{

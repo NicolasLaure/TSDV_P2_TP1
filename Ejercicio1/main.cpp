@@ -11,12 +11,30 @@ void main()
 	Queue<float>* queue = new Queue<float>;
 	Stack<float>* stack = new Stack<float>;
 	List<float>* list = new List<float>;
+	Generator<float> generator;
 
 	int randomQuantity = rand() % 6 + 5;
-	Generator(queue, randomQuantity);
+	cout << randomQuantity << endl;
+	generator.QueueGenerator(queue, randomQuantity);
 	randomQuantity = rand() % 6 + 5;
-	Generator(stack, randomQuantity);
-	Generator(list, queue, stack);
+	cout << randomQuantity << endl;
+	generator.StackGenerator(stack, randomQuantity);
+
+	cout << "Queue: ";
+	for (int i = 0; i < queue->GetCount(); i++)
+	{
+		cout << queue->GetValueAt(i) << ", ";
+	}
+	cout << "\n------------\n";
+
+	cout << "Stack: ";
+	for (int i = 0; i < stack->GetCount(); i++)
+	{
+		cout << stack->GetValueAt(i) << ", ";
+	}
+	cout << "\n------------\n";
+
+	generator.QueueAndStackMerger(list, queue, stack);
 
 	cout << "Quantity of numbers: " << list->GetCount() << endl;
 	cout << fixed << setprecision(2);
